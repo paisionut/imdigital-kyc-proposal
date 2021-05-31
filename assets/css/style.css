@@ -1,0 +1,57 @@
+:root {
+  --bs-darkblue: #040B30;
+}
+.bg-darkblue,
+footer {
+  background: var(--bs-darkblue);
+}
+.bg-blue,
+.navbar.show {
+  background-color: var(--bs-blue);
+}
+.nav-pills a.active,
+.nav-pills a:hover {
+  background-color: var(--bs-white);
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+}
+.navbar-dark .navbar-toggler {
+  border-color: var(--bs-white);
+}
+.bg-backdrop {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 30;
+  transition: opacity .2s linear, visibility 0.2s, width 2s ease-in;
+}
+.bg-backdrop.show {
+  z-index: 10;
+  transition: opacity .3s ease, width 0s;
+  width: 100%;
+  visibility: visible;
+}
+@media (max-width: 991.98px) {
+  .navbar-offcanvas {
+    visibility: hidden;
+    transform: translateX(-100%);
+    border-radius: 0;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1200;
+    width: 85vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: visibility .3s ease-in-out, transform .3s ease-in-out;
+  }
+  .navbar-offcanvas.show {
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
